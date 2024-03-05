@@ -1,0 +1,49 @@
+body{background: #BCC9B5;  /* fallback for old browsers */
+  }
+
+@media (min-width: 1025px) {
+
+  
+#menu-container{
+
+background: #FFFFFF;
+max-width: 90%;
+top: 1rem;
+margin-left: 8rem;
+
+  padding: 10px;
+
+
+}
+}
+#tabla-paciente{
+
+    max-height: 50rem; /* altura máxima del div */
+  overflow: auto; 
+}
+#tabla-grafico{
+height: 30rem;
+    max-height: 40rem; /* altura máxima del div */
+  overflow: auto; 
+}
+#tabla-datos{
+   
+font-size: 12px;
+
+}
+#datos{
+    font-size: 12px;
+}
+#menu-pac-total{
+    background: #D6E3CF;
+    font-family: 'Bona Nova', serif;
+font-family: 'Merriweather', serif;
+font-size: 14px;
+}
+#menu-pac-total{
+    background: #D6E3CF;
+}
+#grafica{
+    max-height: 30rem;
+}
+

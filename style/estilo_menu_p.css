@@ -1,0 +1,17 @@
+
+  .buton_seccion:active,
+  .buton_seccion:focus {
+    border-left: 4px solid white;
+  }
+  
+  .reloj {
+    width: 100%;
+    text-align: right;
+    color: #237a57;
+    font-size: 16px;
+    font-family: "Bona Nova", serif;
+    font-family: "Merriweather", serif;
+  }
+
+  
+  

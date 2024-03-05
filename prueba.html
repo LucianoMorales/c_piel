@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dibujo en Canvas con Borrado</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400" style="border:1px solid black;">
+    </canvas>
+    <button id="clearButton">Borrar</button>
+
+    <script>
+
+        
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        const image = new Image();
+image.src = "cancer_mama/image/mamas/mamas.png"; // Ruta de la imagen
+
+// Espera a que la imagen se cargue
+image.onload = function() {
+  // Dibuja la imagen en el canvas
+  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+  // Resto de tu código para el dibujo y el borrado
+};
+        let isDrawing = false;
+        let drawingData = [];
+        let lastX = 0;
+        let lastY = 0;
+
+        canvas.addEventListener("mousedown", (e) => {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+
+        canvas.addEventListener("mousemove", draw);
+
+        canvas.addEventListener("mouseup", () => isDrawing = false);
+        canvas.addEventListener("mouseout", () => isDrawing = false);
+
+        
+
+        function draw(e) {
+            if (!isDrawing) return;
+            ctx.strokeStyle = "#000"; // Color de la línea
+            ctx.lineWidth = 2; // Ancho de la línea
+            ctx.lineJoin = "round";
+            ctx.lineCap = "round";
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+
+            // Guardar los datos de la línea en un arreglo
+            drawingData.push({ x1: lastX, y1: lastY, x2: e.offsetX, y2: e.offsetY });
+
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        // Función para borrar líneas
+        function eraseLines(x, y) {
+            for (let i = 0; i < drawingData.length; i++) {
+                const { x1, y1, x2, y2 } = drawingData[i];
+                if (isPointOnLine(x, y, x1, y1, x2, y2)) {
+                    drawingData.splice(i, 1); // Eliminar la línea del arreglo
+                    redrawCanvas(); // Redibujar el lienzo sin la línea borrada
+                    break;
+                }
+            }
+        }
+
+        // Función para redibujar el lienzo
+        function redrawCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (const { x1, y1, x2, y2 } of drawingData) {
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.stroke();
+            }
+        }
+
+        // Función para determinar si un punto (x, y) está en una línea (x1, y1, x2, y2)
+        function isPointOnLine(x, y, x1, y1, x2, y2) {
+            const d = Math.sqrt((x - x1) ** 2 + (y - y1) ** 2) + Math.sqrt((x - x2) ** 2 + (y - y2) ** 2);
+            const lineLength = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
+            return d <= lineLength;
+        }
+    </script>
+</body>
+</html>

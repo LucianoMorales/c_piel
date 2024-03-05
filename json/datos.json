@@ -1,0 +1,112 @@
+{
+    "provincias": [
+      {
+        "nombre": "Bocas del Toro",
+        "distritos": [
+          "Bocas del Toro",
+          "Changuinola",
+          "Chiriquí Grande",
+          "Almirante"
+        ]
+      },
+      {
+        "nombre": "Coclé",
+        "distritos": [
+          "Aguadulce",
+          "Antón",
+          "La Pintada",
+          "Natá",
+          "Olá",
+          "Penonomé"
+        ]
+      },
+      {
+        "nombre": "Colón",
+        "distritos": [
+          "Colón",
+          "Chagres",
+          "Donoso",
+          "Portobelo",
+          "Santa Isabel"
+        ]
+      },
+      {
+        "nombre": "Chiriquí",
+        "distritos": [
+          "Alanje",
+          "Barú",
+          "Boquerón",
+          "Boquete",
+          "Bugaba",
+          "David",
+          "Dolega",
+          "Gualaca",
+          "Remedios",
+          "Renacimiento",
+          "San Félix",
+          "San Lorenzo",
+          "Tierras Altas",
+          "Tolé"
+        ]
+      },
+      {
+        "nombre": "Darién",
+        "distritos": [
+          "Chepigana",
+          "Pinogana",
+          "Santa Fe"
+        ]
+      },
+      {
+        "nombre": "Herrera",
+        "distritos": [
+          "Chitré",
+          "Las Minas",
+          "Los Pozos",
+          "Ocú",
+          "Parita",
+          "Pesé",
+          "Santa María"
+        ]
+      },
+      {
+        "nombre": "Los Santos",
+        "distritos": [
+          "Guararé",
+          "Las Tablas",
+          "Los Santos",
+          "Macaracas",
+          "Pedasí",
+          "Pocrí"
+        ]
+      },
+      {
+        "nombre": "Panamá",
+        "distritos": [
+          "Balboa",
+          "Chepo",
+          "Chimán",
+          "Panamá",
+          "San Miguelito",
+          "Taboga"
+        ]
+      },
+      {
+        "nombre": "Veraguas",
+        "distritos": [
+          "Atalaya",
+          "Calobre",
+          "Cañazas",
+          "La Mesa",
+          "Las Palmas",
+          "Mariato",
+          "Montijo",
+          "Río de Jesús",
+          "San Francisco",
+          "Santa Fé",
+          "Santiago",
+          "Soná"
+        ]
+      }
+    ]
+  }
